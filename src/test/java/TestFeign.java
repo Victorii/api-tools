@@ -9,6 +9,7 @@ public class TestFeign {
         FeignWrapper feignWrapper = new FeignWrapper();
         feignWrapper.setURL("https://api.github.com/repositories");
         feignWrapper.getResponse();
+
     }
 
 }

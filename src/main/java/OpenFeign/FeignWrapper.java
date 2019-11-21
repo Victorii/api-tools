@@ -4,6 +4,7 @@ import feign.Feign;
 import feign.Response;
 import feign.gson.GsonDecoder;
 
+
 public class FeignWrapper {
     private String baseURL = "";
 
