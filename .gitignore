@@ -1,0 +1,8 @@
+.gradle/
+/.idea/
+*.idea/
+*.iml
+logs/
+*.log
+*.lck
+/out/
