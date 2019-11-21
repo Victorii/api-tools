@@ -1,6 +1,7 @@
 package OpenFeign;
 
 import feign.Feign;
+import feign.Response;
 import feign.gson.GsonDecoder;
 
 public class FeignWrapper {
@@ -11,7 +12,7 @@ public class FeignWrapper {
                 .decoder(new GsonDecoder())
                 .target(ResponseFeign.class, baseURL);
 
-        responseFeign.connect();
+        Response response = responseFeign.response();
     }
 
     /**

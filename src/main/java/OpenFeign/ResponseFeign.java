@@ -5,8 +5,9 @@ import feign.Response;
 
 public interface ResponseFeign {
     @RequestLine("GET ")
-    Response connect();
+    Response response();
 
-    class connect {
+    class response {
+        Response response;
     }
 }

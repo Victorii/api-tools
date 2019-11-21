@@ -21,6 +21,8 @@ public class RestAssuredWrapper {
     private String baseURL = "";
     private Parser parser = Parser.JSON;
 
+    private RestAssuredResponseData restAssuredResponseData = RestAssuredResponseData.getData();
+
     public void getResponse(){
         RestAssured.defaultParser = parser;
 
@@ -31,6 +33,7 @@ public class RestAssuredWrapper {
         httpRequest.params(parameters);
         Response response = httpRequest.request(httpMethod);
 
+        setToResponseData(response);
     }
 
     /**
@@ -80,5 +83,14 @@ public class RestAssuredWrapper {
         )));
     }
 
-
+    /**
+     * Set response to object restAssuredResponseData for use in Validator and LocalParser
+     * @param response
+     */
+    private void setToResponseData(Response response){
+        restAssuredResponseData.setResponseBody(response.getBody());
+        restAssuredResponseData.setResponseCookies(response.getDetailedCookies());
+        restAssuredResponseData.setResponseHeaders(response.getHeaders());
+        restAssuredResponseData.setStatusCode(response.getStatusCode());
+    }
 }

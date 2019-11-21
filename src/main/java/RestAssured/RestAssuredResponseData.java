@@ -1,15 +1,15 @@
-package Data;
+package RestAssured;
 
 import io.restassured.http.Cookies;
 import io.restassured.http.Headers;
 import io.restassured.response.ResponseBody;
 
-public class ResponseData {
+public class RestAssuredResponseData {
     /**
      * private constructor to avoid multiple object instances.
      * access only from public getData() method
      */
-    private ResponseData() {
+    private RestAssuredResponseData() {
         responseBody = null; //TODO: NPE?
         responseHeaders = new Headers();
         responseCookies = new Cookies();
@@ -17,18 +17,18 @@ public class ResponseData {
     }
 
     /**
-     * @return instance of ResponseData object due to single object existence
+     * @return instance of RestAssuredResponseData object due to single object existence
      */
-    public static ResponseData getData(){
+    public static RestAssuredResponseData getData(){
         return ResponseDataHolder.instance;
     }
 
     /**
      * private inner class intended to store constant of instance
-     * it provides possibility to work with only single object of ResponseData
+     * it provides possibility to work with only single object of RestAssuredResponseData
      */
     private static class ResponseDataHolder {
-        private static final ResponseData instance = new ResponseData();
+        private static final RestAssuredResponseData instance = new RestAssuredResponseData();
     }
 
     private ResponseBody responseBody;
@@ -68,7 +68,7 @@ public class ResponseData {
      * set value to responseBody for single object
      * @param responseBody
      */
-    protected void setResponseBody(ResponseBody responseBody) {
+    public void setResponseBody(ResponseBody responseBody) {
         this.responseBody = responseBody;
     }
 
@@ -76,7 +76,7 @@ public class ResponseData {
      * set value to responseCookies for single object
      * @param responseCookies
      */
-    protected void setResponseCookies(Cookies responseCookies) {
+    public void setResponseCookies(Cookies responseCookies) {
         this.responseCookies = responseCookies;
     }
 
@@ -84,7 +84,7 @@ public class ResponseData {
      * set value to responseHeaders for single object
      * @param responseHeaders
      */
-    protected void setResponseHeaders(Headers responseHeaders) {
+    public void setResponseHeaders(Headers responseHeaders) {
         this.responseHeaders = responseHeaders;
     }
 
@@ -92,7 +92,7 @@ public class ResponseData {
      * set value to statusCode for single object
      * @param statusCode
      */
-    protected void setStatusCode(int statusCode) {
+    public void setStatusCode(int statusCode) {
         this.statusCode = statusCode;
     }
 }
