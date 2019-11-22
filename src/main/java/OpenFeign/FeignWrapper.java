@@ -6,14 +6,25 @@ import feign.gson.GsonDecoder;
 
 
 public class FeignWrapper {
+    private FeignResponseData feignResponseData = FeignResponseData.getData();
+
     private String baseURL = "";
 
     public void getResponse(){
-        ResponseFeign responseFeign = Feign.builder()
+        Response responseFeign = Feign.builder()
                 .decoder(new GsonDecoder())
-                .target(ResponseFeign.class, baseURL);
+                .target(ResponseFeign.class, baseURL).response();
 
-        Response response = responseFeign.response();
+        setToResponseData(responseFeign);
+
+    }
+
+    private void setToResponseData(Response response){
+        feignResponseData.setRequest(response.request());
+        feignResponseData.setStatus(response.status());
+        feignResponseData.setReason(response.reason());
+        feignResponseData.setBody(response.body());
+        feignResponseData.setHeaders(response.headers());
     }
 
     /**

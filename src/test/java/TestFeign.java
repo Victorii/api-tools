@@ -1,3 +1,4 @@
+import OpenFeign.FeignResponseData;
 import OpenFeign.FeignWrapper;
 import org.testng.annotations.Test;
 
@@ -9,7 +10,6 @@ public class TestFeign {
         FeignWrapper feignWrapper = new FeignWrapper();
         feignWrapper.setURL("https://api.github.com/repositories");
         feignWrapper.getResponse();
-
     }
 
 }

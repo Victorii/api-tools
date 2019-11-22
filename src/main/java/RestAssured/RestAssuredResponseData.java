@@ -68,7 +68,7 @@ public class RestAssuredResponseData {
      * set value to responseBody for single object
      * @param responseBody
      */
-    public void setResponseBody(ResponseBody responseBody) {
+    protected void setResponseBody(ResponseBody responseBody) {
         this.responseBody = responseBody;
     }
 
@@ -76,7 +76,7 @@ public class RestAssuredResponseData {
      * set value to responseCookies for single object
      * @param responseCookies
      */
-    public void setResponseCookies(Cookies responseCookies) {
+    protected void setResponseCookies(Cookies responseCookies) {
         this.responseCookies = responseCookies;
     }
 
@@ -84,7 +84,7 @@ public class RestAssuredResponseData {
      * set value to responseHeaders for single object
      * @param responseHeaders
      */
-    public void setResponseHeaders(Headers responseHeaders) {
+    protected void setResponseHeaders(Headers responseHeaders) {
         this.responseHeaders = responseHeaders;
     }
 
@@ -92,7 +92,7 @@ public class RestAssuredResponseData {
      * set value to statusCode for single object
      * @param statusCode
      */
-    public void setStatusCode(int statusCode) {
+    protected void setStatusCode(int statusCode) {
         this.statusCode = statusCode;
     }
 }
