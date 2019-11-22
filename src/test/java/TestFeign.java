@@ -1,4 +1,4 @@
-import OpenFeign.FeignResponseData;
+
 import OpenFeign.FeignWrapper;
 import org.testng.annotations.Test;
 
