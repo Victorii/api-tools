@@ -14,15 +14,23 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 
     /***
-     * rest assured
+     * REST ASSURED
      * */
     implementation 'io.rest-assured:rest-assured:4.1.1'
+
+
     /***
      * feign
      * */
-    compile group: 'io.github.openfeign', name: 'feign-core', version: '10.6.0'
-    compile group: 'io.github.openfeign', name: 'feign-gson', version: '10.6.0'
+    implementation group: 'io.github.openfeign', name: 'feign-core', version: '10.6.0'
+    implementation group: 'io.github.openfeign', name: 'feign-gson', version: '10.6.0'
 
+
+    /***
+     * RETROFIT
+    * */
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.6.2'
 
     /**
      * JSON validation
