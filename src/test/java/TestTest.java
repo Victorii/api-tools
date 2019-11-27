@@ -57,7 +57,7 @@ public class TestTest {
         auth.setUserName(_username);
         auth.setPassword(_pass);
         builder.setAuth(auth);
-        RequestSpecification _spec = builder.build();
-        return RestAssured.given(_spec);
+        RequestSpecification spec = builder.build();
+        return RestAssured.given(spec);
     }
 }
