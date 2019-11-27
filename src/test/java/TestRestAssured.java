@@ -69,7 +69,7 @@ public class TestRestAssured {
     @Test(description = "Edit repo", priority = 4)
     public void PATCH()  {
         request_spec_builder(editRepo, Auth.userName, Auth.password).patch("/repos/"+repo).then().
-                statusCode(200).extract().asString();
+                statusCode(200);
     }
 
     @Test(description = "Delete repo", priority = 5)
