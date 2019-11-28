@@ -69,7 +69,7 @@ public class RetrofitTest {
 
     @Test(description = "Star a repo", priority = 3)
     public void PUT()  {
-        Call<Repo> call = github.delete(Credentials.basic(Auth.userName, Auth.password),
+        Call<Repo> call = github.put(Credentials.basic(Auth.userName, Auth.password),
                 loginName, repoName);
         Response response = executeCall(call);
         assertEquals(response.code(), 204);
